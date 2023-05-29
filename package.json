@@ -17,6 +17,7 @@
   "homepage": "https://github.com/ivandonatongua25/arquitecturawebTP#readme",
   "description": "",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22"
   }
 }
