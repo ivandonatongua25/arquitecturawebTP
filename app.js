@@ -1,15 +1,16 @@
 const express = require('express')
-
+const path = require('path');
 const app = express()
 const port = 3002
+app.use(express.static(path.join(__dirname, 'public')))
 
-app.get('/hotel/', (req, res) => {
-  res.send('Estos son los hoteles disponibles!')
+app.get('/', (req, res) => {
+  res.sendFile(path.resolve('./views/views.html'))
 });
 
 app.get('/hotel/:id', (req, res) =>
 {
-  res.send('el hotel bueno');
+  res.sendFile(path.resolve('el hotel bueno'));
 }
 );
 
@@ -18,13 +19,19 @@ app.get('/huesped/:id', (req, res) =>{
 });
 
 app.get('/huesped/', (req, res) =>{
-  res.send('Lista de huespedes')
+  res.sendFile(path.resolve('./views/vista.html'));
 })
 
-app.get('/', (req, res) => {
-    res.send('Hola ivan!')
+
+//*****************por si hay algun error  **************************************/
+app.get('*', (req, res) => {
+    res.status(404).sendFile(path.resolve('./views/error.html'));
   });
 
+
+
+
+//*****************LEVANTO SERVIDOR  **************************************/
 app.listen(port, () => {
   console.log(`servidor corriendo en el puerto : ${port}`)
 });
