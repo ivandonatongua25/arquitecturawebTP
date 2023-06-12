@@ -1,0 +1,36 @@
+body{
+    background: scroll;
+    background-color: blue;
+}
+
+.caja-elementos{
+    justify-content: baseline;
+    text-align: center;
+    border-top:1px solid #888;
+    padding-left: 100px;
+    margin: 10px;
+    background-color: red;
+    width: 500px;
+    ;
+}
+.caja-general{
+    margin: 10px;
+    justify-content: baseline;
+}
+.menu{
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+
+.banner{
+    height: 200px; 
+    width: 700px;
+}
+
+.imagenes-productos{
+    width: 500px;
+    height: 500px;
+    padding-left: 100px;
+    padding-top: 20px;
+}

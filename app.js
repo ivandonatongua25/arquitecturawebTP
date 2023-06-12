@@ -3,24 +3,8 @@ const path = require('path');
 const app = express()
 const port = 3002
 app.use(express.static(path.join(__dirname, 'public')))
-
-app.get('/', (req, res) => {
-  res.sendFile(path.resolve('./views/views.html'))
-});
-
-app.get('/hotel/:id', (req, res) =>
-{
-  res.sendFile(path.resolve('el hotel bueno'));
-}
-);
-
-app.get('/huesped/:id', (req, res) =>{
-  res.send('El huesped');
-});
-
-app.get('/huesped/', (req, res) =>{
-  res.sendFile(path.resolve('./views/vista.html'));
-})
+const mainRouter = require('./routers/router')
+app.get('/', mainRouter);
 
 
 //*****************por si hay algun error  **************************************/
